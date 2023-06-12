@@ -1,0 +1,49 @@
+.container {
+    margin-top: 40px;
+}
+
+.list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mt {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.right-icon {
+    margin-left: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.left-icon {
+    margin-right: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+span {
+    color: rgb(32, 113, 244);
+    padding-right: 10px;
+}
+
+.fa-solid {
+    cursor: pointer;
+}
+
+.trash:hover {
+    color: red;
+}
+
+h2 {
+    color: rgb(12, 113, 246);
+    font-weight: 700;
+    margin-bottom: 0;
+}
