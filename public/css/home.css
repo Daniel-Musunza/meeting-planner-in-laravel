@@ -47,3 +47,24 @@ h2 {
     font-weight: 700;
     margin-bottom: 0;
 }
+.content {
+    margin-top: 40px;
+    margin-left: 500px;
+}
+.form-group{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.btn{
+    background-color:#9ec6f6;
+}
+@media only screen and (max-width: 768px) {
+    .content {
+    margin-top: 40px;
+    margin-left: 0;
+    padding: 10px;
+
+}
+}
