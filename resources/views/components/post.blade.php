@@ -1,34 +1,25 @@
 @props(['post' => $post])
+<ul class="list-group mt-4">
+            <li class="list-group-item">
+                <div class="list">
+                    <div class="left-icon">
+                        <span>1. </span>
+                        <a href="{{ $post->link }} "> {{ $post->title }} - <span style="color: rgb(52, 221, 52)">{{ $post->platform }} </span></a>
+                    </div>
 
-<div class="mb-4">
-    <a href="{{ route('users.posts', $post->user) }}" class="font-bold">{{ $post->user->name }}</a> <span class="text-gray-600 text-sm">{{ $post->created_at->diffForHumans() }}</span>
+                    <div class="right-icon">
 
-    <p class="mb-2">{{ $post->body }}</p>
-
-    @can('delete', $post)
-        <form action="{{ route('posts.destroy', $post) }}" method="post">
-            @csrf
-            @method('DELETE')
-            <button type="submit" class="text-blue-500">Delete</button>
-        </form>
-    @endcan
-
-    <div class="flex items-center">
-        @auth
-            @if (!$post->likedBy(auth()->user()))
-                <form action="{{ route('posts.likes', $post) }}" method="post" class="mr-1">
-                    @csrf
-                    <button type="submit" class="text-blue-500">Like</button>
-                </form>
-            @else
-                <form action="{{ route('posts.likes', $post) }}" method="post" class="mr-1">
-                    @csrf
-                    @method('DELETE')
-                    <button type="submit" class="text-blue-500">Unlike</button>
-                </form>
-            @endif
-        @endauth
-
-        <span>{{ $post->likes->count() }} {{ Str::plural('like', $post->likes->count()) }}</span>
-    </div>
-</div>
+                        <span>
+                            <!-- <i class="fa-solid fa-ellipsis-vertical"></i> -->
+                            @can('delete', $post)
+                            <form action="{{ route('posts.destroy', $post) }}" method="post">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="trash"><i class="fa-solid fa-trash-can"></i></button>
+                            </form>
+                            @endcan
+                        </span>
+                    </div>
+                </div>
+            </li>
+</ul>
