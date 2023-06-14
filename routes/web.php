@@ -12,6 +12,7 @@ use App\Http\Controllers\Auth\RegisterController;
 Route::get('/', function () {
     return view('home');
 })->name('home');
+Route::post('/', [PostController::class, 'store'])->name('posts.store');
 
 Route::get('/dashboard', [DashboardController::class, 'index'])
     ->name('dashboard');

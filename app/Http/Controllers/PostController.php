@@ -31,10 +31,14 @@ class PostController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'body' => 'required'
+            'title' => 'required',
+            'platform' => 'required',
+            'link' => 'required',
+            'date' => 'required',
+            'time' => 'required'
         ]);
 
-        $request->user()->posts()->create($request->only('body'));
+        $request->user()->posts()->create($request->only('title', 'platform','link', 'date', 'time'));
 
         return back();
     }

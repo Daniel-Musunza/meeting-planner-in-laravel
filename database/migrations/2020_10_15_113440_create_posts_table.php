@@ -13,11 +13,12 @@ class CreatePostsTable extends Migration
      */
     public function up()
     {
-        Schema::create('posts', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('user_id')->constrained()->onDelete('cascade');
-            $table->text('body');
-            $table->timestamps();
+        Schema::table('posts', function (Blueprint $table) {
+            $table->string('title');
+            $table->string('platform')->nullable();
+            $table->string('link')->nullable();
+            $table->date('date');
+            $table->time('time');
         });
     }
 
