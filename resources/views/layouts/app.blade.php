@@ -12,6 +12,7 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
         <script src="https://kit.fontawesome.com/332a0bbd7c.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+
     </head>
     <body class="bg-gray-200">
         <nav class="p-6 bg-white flex justify-between mb-6">
