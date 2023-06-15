@@ -9,15 +9,18 @@
             </div>
 
             <div class="bg-white p-6 rounded-lg">
-                @if ($posts->count())
-                    @foreach ($posts as $index => $post)
-                        <x-post :post="$post" />
-                    @endforeach
+            @if ($posts->count())
+                @foreach ($posts as $index => $post)
+                    <span style="margin-left: 10px; position: fixed; z-index: 999;">{{$index + 1}}.</span>
+                    <x-post :post="$post" :index="$index" />
+                @endforeach
 
-                    {{ $posts->links() }}
-                @else
-                    <p>{{ $user->name }} does not have any posts</p>
-                @endif
+                {{ $posts->links() }}
+            @else
+                <p>{{ $user->name }} does not have any posts</p>
+            @endif
+
+
             </div>
         </div>
     </div>

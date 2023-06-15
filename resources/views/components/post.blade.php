@@ -8,7 +8,7 @@
             </div>
 
             <div class="right-icon">
-            <span id="time-remaining-{{ $post->id }}"></span>
+                <span id="time-remaining-{{ $post->id }}"></span>
 
                 <span>
                     @can('delete', $post)
@@ -23,13 +23,14 @@
         </div>
     </li>
 </ol>
+
 <script>
-    function updateTimeRemaining(postId) {
+    function updateTimeRemaining(postId, date, time) {
         const timeSpan = document.getElementById(`time-remaining-${postId}`);
 
         if (timeSpan) {
             const now = Math.floor(Date.now() / 1000); // Current timestamp in seconds
-            const targetTimestamp = Math.floor(Date.parse('{{ $post->date }} {{ $post->time }}') / 1000); // Target timestamp in seconds
+            const targetTimestamp = Math.floor(Date.parse(date + ' ' + time) / 1000); // Target timestamp in seconds
             const totalSeconds = targetTimestamp - now;
 
             if (totalSeconds > 0) {
@@ -59,10 +60,5 @@
         }
     }
 
-    updateTimeRemaining({{ $post->id }});
-
-    // Update time remaining periodically
-    setInterval(function() {
-        updateTimeRemaining({{ $post->id }});
-    }, 1000);
+    updateTimeRemaining({{ $post->id }}, '{{ $post->date }}', '{{ $post->time }}');
 </script>
