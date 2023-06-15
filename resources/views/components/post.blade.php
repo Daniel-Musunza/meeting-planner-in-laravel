@@ -1,6 +1,6 @@
 @props(['post'])
 
-<ol class="list-group mt-4" style="list-style-type: style;">
+<ol class="list-group mt-4" style="list-style-type: decimal;">
     <li class="list-group-item">
         <div class="list">
             <div class="left-icon">
