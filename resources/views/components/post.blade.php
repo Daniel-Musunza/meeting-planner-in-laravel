@@ -1,6 +1,6 @@
 @props(['post'])
 
-<ol class="list-group mt-4" style="list-style-type: decimal;">
+<ol class="list-group mt-4">
     <li class="list-group-item">
         <div class="list">
             <div class="left-icon">
@@ -8,7 +8,7 @@
             </div>
 
             <div class="right-icon">
-                <span id="time-remaining-{{ $post->id }}"></span>
+            <span id="time-remaining-{{ $post->id }}"></span>
 
                 <span>
                     @can('delete', $post)
@@ -23,7 +23,6 @@
         </div>
     </li>
 </ol>
-
 <script>
     function updateTimeRemaining(postId) {
         const timeSpan = document.getElementById(`time-remaining-${postId}`);
