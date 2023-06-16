@@ -18,6 +18,9 @@
         <nav class="p-6 bg-white flex justify-between mb-6">
             <ul class="flex items-center">
                  <li>
+                    <img src="{{ asset('images/favicon.ico') }}" alt="MP" width="40px;">
+                </li>
+                <li>
                     <a href="{{ route('posts') }}" class="p-3">Planner</a>
                 </li>
                 <li>
