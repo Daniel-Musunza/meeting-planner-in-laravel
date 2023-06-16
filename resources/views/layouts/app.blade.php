@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <link rel="icon" href="/favicon.ico">
+        <link rel="icon" href="{{ asset('images/favicon.ico') }}">
         <title>Meeting Planner</title>
         <link href="{{ asset('css/home.css') }}" rel="stylesheet">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -23,9 +23,6 @@
                 <li>
                     <a href="/" class="p-3">New Meeting</a>
                 </li>
-                <!-- <li>
-                    <a href="{{ route('dashboard') }}" class="p-3">Dashboard</a>
-                </li> -->
               
             </ul>
 
