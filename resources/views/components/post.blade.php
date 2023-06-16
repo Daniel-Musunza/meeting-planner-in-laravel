@@ -49,9 +49,9 @@
                 if (minutes > 0) {
                     timeRemaining += `${minutes} min `;
                 }
-                if (seconds > 0) {
-                    timeRemaining += `${seconds} sec`;
-                }
+                // if (seconds > 0) {
+                //     timeRemaining += `${seconds} sec`;
+                // }
 
                 timeSpan.textContent = timeRemaining;
             } else {
