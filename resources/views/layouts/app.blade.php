@@ -31,7 +31,7 @@
 
             <ul class="flex items-center">
                 @auth
-                    <li>
+                    <li class="none">
                         <a href="" class="p-3">{{ auth()->user()->name }}</a>
                     </li>
                     <li>

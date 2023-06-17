@@ -6,6 +6,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 800px;
 }
 
 .mt {
@@ -69,5 +70,18 @@ h2 {
     margin-left: 0;
     padding: 10px;
 
+}
+form {
+    padding: 10px;
+}
+.none{
+    display: none;
+}
+.list {
+    width: 100%;
+}
+.log{
+    margin:0;
+    width: 100%;
 }
 }

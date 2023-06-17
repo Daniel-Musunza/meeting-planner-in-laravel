@@ -17,23 +17,23 @@ class PostController extends Controller
         $this->middleware(['auth']);
     }
     
-    // public function index()
-    // {
-    //     $posts = Post::latest()->with(['user', 'likes'])->paginate(10);
-
-    //     return view('posts.index', [
-    //         'posts' => $posts
-    //     ]);
-    // }
-    public function index(User $user)
+    public function index()
     {
-        $posts = $user->posts()->with(['user', 'likes'])->paginate(10);
+        $posts = Post::latest()->with(['user', 'likes'])->paginate(10);
 
-        return view('users.posts.index', [
-            'user' => $user,
+        return view('posts.index', [
             'posts' => $posts
         ]);
     }
+    // public function index(User $user)
+    // {
+    //     $posts = $user->posts()->with(['user', 'likes'])->paginate(10);
+
+    //     return view('users.posts.index', [
+    //         'user' => $user,
+    //         'posts' => $posts
+    //     ]);
+    // }
 
     public function show(Post $post)
     {

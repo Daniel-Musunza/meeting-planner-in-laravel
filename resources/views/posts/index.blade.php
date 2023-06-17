@@ -8,20 +8,25 @@
         <!-- <h3 class="mt">Meetings</h3> -->
         <div class="p-6 rounded-lg">
         @if ($posts->count())
+    
             <div class="row ">
                 @foreach ($posts as $index => $post)
+                @can('delete', $post)
                     <div class="post-item flex justify-center align-center">
-                        <span style="padding-top:17px;">{{ $index + 1}}.</span>
+                        <!-- <span style="padding-top:17px;">{{ $index + 1}}.</span> -->
                         <x-post :post="$post" />
                     </div>
+                @endcan
                 @endforeach
             </div>
 
             {{ $posts->links() }}
         @else
-            <div class="mt-4">
-                <p>No tasks found.</p>
-            </div>
+            @can('delete', $post)
+                <div class="mt-4">
+                    <p>No tasks found.</p>
+                </div>
+            @endcan
         @endif
     </div>
     </div>

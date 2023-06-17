@@ -1,6 +1,6 @@
 @props(['post'])
 
-<ol class="list-group mt-4">
+<ol class="list-group mt-4"  style="min-width 800px;">
     <li class="list-group-item">
         <div class="list">
             <div class="left-icon">
@@ -11,13 +11,13 @@
                 <span id="time-remaining-{{ $post->id }}"></span>
 
                 <span>
-                    @can('delete', $post)
+                   
                         <form action="{{ route('posts.destroy', $post) }}" method="post">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="trash"><i class="fa-solid fa-trash-can"></i></button>
                         </form>
-                    @endcan
+                   
                 </span>
             </div>
         </div>
