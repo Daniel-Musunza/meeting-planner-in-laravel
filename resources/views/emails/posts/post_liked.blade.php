@@ -1,7 +1,7 @@
 @component('mail::message')
-# Your post was liked
+# Your have a meeting today
 
-{{ $liker->name }} liked one of your posts
+you have {{$post->title}} meeting at{{ $post->time }}.
 
 @component('mail::button', ['url' => route('posts.show', $post)])
     View post
