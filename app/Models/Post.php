@@ -15,7 +15,8 @@ class Post extends Model
         'platform',
         'link',
         'date',
-        'time'
+        'time',
+        'user_id'
     ];
 
     public function likedBy(User $user)

@@ -8,10 +8,9 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\MailController;
 
-Route::get('/', function () {
-    return view('home');
-})->name('home');
+Route::get('/', [MailController::class, 'sendMail']);
 Route::post('/', [PostController::class, 'store'])->name('posts.store');
 
 Route::get('/dashboard', [DashboardController::class, 'index'])
@@ -34,4 +33,5 @@ Route::delete('/posts/{post}', [PostController::class, 'destroy'])->name('posts.
 
 Route::post('/posts/{post}/likes', [PostLikeController::class, 'store'])->name('posts.likes');
 Route::delete('/posts/{post}/likes', [PostLikeController::class, 'destroy'])->name('posts.likes');
+
 
