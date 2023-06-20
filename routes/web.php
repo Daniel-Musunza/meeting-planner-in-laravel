@@ -10,7 +10,7 @@ use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\MailController;
 
-Route::get('/', [MailController::class, 'sendMail']);
+Route::get('/', [MailController::class, 'sendMail'])->name('home');
 Route::post('/', [PostController::class, 'store'])->name('posts.store');
 
 Route::get('/dashboard', [DashboardController::class, 'index'])
