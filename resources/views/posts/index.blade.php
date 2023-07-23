@@ -12,7 +12,7 @@
                 @foreach ($posts as $index => $post)
                 @can('delete', $post)
                     <div class="post-item flex justify-center align-center">
-                        <!-- <span style="padding-top:17px;">{{ $index + 1}}.</span> -->
+                        
                         <x-post :post="$post" />
                     </div>
                 @endcan
