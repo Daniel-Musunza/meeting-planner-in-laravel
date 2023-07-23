@@ -5,7 +5,6 @@
         <div class="flex justify-center align-center">
             <h3>Meeting Planner</h3>
         </div>
-        <!-- <h3 class="mt">Meetings</h3> -->
         <div class="p-6 rounded-lg">
         @if ($posts->count())
     
