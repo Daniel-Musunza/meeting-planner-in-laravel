@@ -24,15 +24,7 @@ class PostController extends Controller
             'posts' => $posts
         ]);
     }
-    // public function index(User $user)
-    // {
-    //     $posts = $user->posts()->with(['user'])->paginate(10);
-
-    //     return view('users.posts.index', [
-    //         'user' => $user,
-    //         'posts' => $posts
-    //     ]);
-    // }
+  
 
     public function show(Post $post)
     {
