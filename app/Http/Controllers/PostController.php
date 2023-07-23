@@ -9,10 +9,7 @@ use Illuminate\Support\Facades\Mail;
 
 class PostController extends Controller
 {
-    // public function __construct()
-    // {
-    //     $this->middleware(['auth'])->only(['store', 'destroy']);
-    // }
+ 
     public function __construct()
     {
         $this->middleware(['auth']);
@@ -56,7 +53,7 @@ class PostController extends Controller
 
         $request->user()->posts()->create($request->only('title', 'platform','link', 'date', 'time'));
 
-        return back();
+        return redirect()->route('posts');
     }
 
     public function destroy(Post $post)
